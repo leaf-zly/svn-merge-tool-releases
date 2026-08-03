@@ -1,15 +1,15 @@
 {
-  "version": "2.0.4",
-  "notes": "SVN 分支合并工具 v2.0.4，支持应用内签名更新。",
-  "pub_date": "2026-08-03T04:15:23.013Z",
+  "version": "2.0.5",
+  "notes": "SVN 分支合并工具 v2.0.5，支持应用内签名更新。",
+  "pub_date": "2026-08-03T05:59:29.550Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRNHRhMHlzb1Nhbm1KalBnL1FzeGRHUXJFeDRVcmlsUU9sb1lkWFFFaWpoNzRsQURGY1U3V3NvSlNydlhpRVUvLzJHeWpHS09FM0pteUIwNytVN3o3WkIvYzZHbm9ueFEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NzMwNTE0CWZpbGU6U1ZOIOWIhuaUr+WQiOW5tuW3peWFt18yLjAuNF94NjQtc2V0dXAuZXhlCmYrU3E2VVhiYXlLN1hBU3dLeVRDVEJ0MDIwbXpkZkZkVmZTQjh2UHJFakloQlV6Tk1WUFY0RjdQNjIvZ21CZnIzQVcxSGZJVmkyV1JpOHoxS24weUJBPT0K",
-      "url": "https://github.com/leaf-zly/svn-merge-tool-releases/releases/download/v2.0.4/svn-merge-tool_2.0.4_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRNHRhMHlzb1Nhbm1xWE5kS2RxRHQzakgzbXVPbnY0NDJmWEUxcUFLRkF3VzlMTFBDQkxGTHdMd2VzdXgvUG9RK1BNVXBESk5Zb1liL2ZibW9FTzJpM0h2QTFxOEh4V0FRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NzM2NzYyCWZpbGU6U1ZOIOWIhuaUr+WQiOW5tuW3peWFt18yLjAuNV94NjQtc2V0dXAuZXhlCjNxK0JYWkRpYVo5UXgvYlJ2QUR5MFk3bkFieXFSaGhOUDlPNnFpRGV5amtKZElOMTdRS0dQa2ZmWUp0bVJkUDlodXFqT1NJOVVlQzl5UnVzYVdrbUF3PT0K",
+      "url": "https://github.com/leaf-zly/svn-merge-tool-releases/releases/download/v2.0.5/svn-merge-tool_2.0.5_x64-setup.exe"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRNHRhMHlzb1Nhbm1KalBnL1FzeGRHUXJFeDRVcmlsUU9sb1lkWFFFaWpoNzRsQURGY1U3V3NvSlNydlhpRVUvLzJHeWpHS09FM0pteUIwNytVN3o3WkIvYzZHbm9ueFEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NzMwNTE0CWZpbGU6U1ZOIOWIhuaUr+WQiOW5tuW3peWFt18yLjAuNF94NjQtc2V0dXAuZXhlCmYrU3E2VVhiYXlLN1hBU3dLeVRDVEJ0MDIwbXpkZkZkVmZTQjh2UHJFakloQlV6Tk1WUFY0RjdQNjIvZ21CZnIzQVcxSGZJVmkyV1JpOHoxS24weUJBPT0K",
-      "url": "https://github.com/leaf-zly/svn-merge-tool-releases/releases/download/v2.0.4/svn-merge-tool_2.0.4_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRNHRhMHlzb1Nhbm1xWE5kS2RxRHQzakgzbXVPbnY0NDJmWEUxcUFLRkF3VzlMTFBDQkxGTHdMd2VzdXgvUG9RK1BNVXBESk5Zb1liL2ZibW9FTzJpM0h2QTFxOEh4V0FRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1NzM2NzYyCWZpbGU6U1ZOIOWIhuaUr+WQiOW5tuW3peWFt18yLjAuNV94NjQtc2V0dXAuZXhlCjNxK0JYWkRpYVo5UXgvYlJ2QUR5MFk3bkFieXFSaGhOUDlPNnFpRGV5amtKZElOMTdRS0dQa2ZmWUp0bVJkUDlodXFqT1NJOVVlQzl5UnVzYVdrbUF3PT0K",
+      "url": "https://github.com/leaf-zly/svn-merge-tool-releases/releases/download/v2.0.5/svn-merge-tool_2.0.5_x64-setup.exe"
     }
   }
 }
