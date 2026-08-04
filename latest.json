@@ -1,15 +1,15 @@
 {
-  "version": "2.0.8",
-  "notes": "## SVN 分支合并工具 v2.0.8\n\n### 更新检查提速\n\n- 更新索引改为 GitHub Raw 优先、GitHub Release 回退，避免 CDN 分支缓存返回旧版本。\n- 每个更新端点最多等待 3 秒，两个端点均异常时约 6 秒结束，不再等待系统默认的约 30 秒超时。\n- 后台自动检查增加 6 小时间隔，避免每次启动重复请求；检查期间仍可点击“更新”查看实时状态。\n- 更新检查不再依赖 jsDelivr CDN，避免缓存未及时刷新导致应用持续识别到旧版本。\n\n### 合并前确认与任务恢复\n\n- 新增合并前确认页，并行验证源工作副本和全部目标分支。\n- 明确显示提交数、目标数、独立任务数，以及远程工作副本复用、本地脏副本隔离策略。\n- 合并过程中实时保存任务检查点；异常关闭或中断后，可重新扫描并继续剩余任务。\n- 合并失败时可直接复制错误详情或打开日志目录。\n\n### AI 冲突合并交互\n\n- AI 生成的完整合并代码先进入预览状态，不再直接视为已确认结果。\n- 支持“保留结果”和“撤销结果”；撤销会恢复 AI 执行前的代码与逐块冲突状态。\n- AI 输出仍包含 SVN 冲突标记时自动拒绝应用，并提示重新生成或手动处理。\n- 低置信度结果使用醒目提示，要求用户在 Result 栏人工检查后确认。\n\n### 质量保障\n\n- 新增更新检查节流、合并任务检查点和 AI 结果撤销测试。\n- 通过 TypeScript 类型检查、前端测试、Rust Clippy、Rust 测试和 Windows NSIS 安装包构建。\n",
-  "pub_date": "2026-08-04T01:34:40.672Z",
+  "version": "2.0.9",
+  "notes": "## SVN 分支合并工具 v2.0.9\r\n\r\n### 日志与面板拖拽\r\n\r\n- 日志区域新增一键放大和恢复，放大后可使用 `Esc` 快速返回原布局。\r\n- 分隔条支持拖动、单击收起或恢复、双击恢复默认高度，以及方向键、Home、End、Enter 键盘操作。\r\n- 日志可一直收起到窗口底部，拖拽按钮始终可见，并支持从底部直接拖回。\r\n- 自动记住用户上一次拖拽位置；窗口缩小时只做临时约束，窗口恢复后回到原位置。\r\n- 空日志默认收起，产生新日志时自动展开；清空日志后重新收起。\r\n- 修复极限拖拽漏算面板间距导致内容溢出窗口的问题。\r\n\r\n### 主界面布局与操作效率\r\n\r\n- 源分支和目标分支的标题、输入框基线统一，左右布局更加整齐。\r\n- 窗口宽度不超过 500px 时，路径配置自动切换为上下两行布局。\r\n- 提交表格合并“作者 / 时间”信息，压缩列宽，并将状态列固定在右侧。\r\n- 合并预览、开始合并和进度反馈移动到提交表格底部，滚动列表时主要操作始终可见。\r\n- 提交顺序拖拽按钮支持键盘上下移动，并完善焦点和禁用状态反馈。\r\n\r\n### 引导与可访问性\r\n\r\n- 待合并列表空状态新增“配置源分支 → 添加目标分支 → 点击扫描”三步引导。\r\n- 目录选择、源目标交换、删除、查看日志等图标按钮补充中文悬停说明和无障碍标签。\r\n- 图标按钮统一有效点击区域，减少误点和“按钮无响应”的误判。\r\n\r\n### 错误提示与质量保障\r\n\r\n- JavaScript、网络、权限、路径、命令缺失和 SVN 等底层错误统一转换为可理解的中文提示。\r\n- 原始英文技术错误保留在执行日志中，界面弹窗不再直接显示难以理解的异常文本。\r\n- 新增面板边界和错误中文化单元测试。\r\n- 通过 TypeScript 类型检查、37 项前端测试、生产前端构建、Rust Clippy 和 Rust 测试。",
+  "pub_date": "2026-08-04T07:19:31.252Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRNHRhMHlzb1NhbnBKQ01EdW02cEVjTDNGa2Q1WThCeHVGVU9Qa1Q2TFRLblpvS3E4SXE3VW1IVmllQUhUdEcvU1NsWEZ2aTFaTjBTVkhVbW9QeTlHZ3ZMUm1BNHdtYmdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1ODA3Mjc3CWZpbGU6U1ZOIOWIhuaUr+WQiOW5tuW3peWFt18yLjAuOF94NjQtc2V0dXAuZXhlCnZmYVp3RWQxend4Q2I2ZmN2Q2RodDRBYVNFL3RlUzBCTkZyb1hPdEYyTExOMDczWnhJTWZkSnlMeDk4UVFFM2xvNGtpdzJyd1BQR0swTE15UW9UZ0NBPT0K",
-      "url": "https://github.com/leaf-zly/svn-merge-tool-releases/releases/download/v2.0.8/svn-merge-tool_2.0.8_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRNHRhMHlzb1Nhbm1IblYxbzdjK3MwU1YzUEJta2tocXVON2ZheFNFMjEwd01jaEpxQkZPYzIwa0hSVTBlZmpicHFtN2xJcFVEb1Q2VnhoOVhDbGc3d2c2VHVrckR5ZVFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1ODI3OTY4CWZpbGU6U1ZOIOWIhuaUr+WQiOW5tuW3peWFt18yLjAuOV94NjQtc2V0dXAuZXhlCk1DSGl3V2hnWFEvZ2wxU1ZsdWFKUUVoZUl0RE5LMjVuT1ZPYnl6bVJacFdUL2J3RWx4cExmUnZxdXYyandUMnIvb00zRnZzR0VRNHJVc0pzRVB3eUNBPT0K",
+      "url": "https://github.com/leaf-zly/svn-merge-tool-releases/releases/download/v2.0.9/svn-merge-tool_2.0.9_x64-setup.exe"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRNHRhMHlzb1NhbnBKQ01EdW02cEVjTDNGa2Q1WThCeHVGVU9Qa1Q2TFRLblpvS3E4SXE3VW1IVmllQUhUdEcvU1NsWEZ2aTFaTjBTVkhVbW9QeTlHZ3ZMUm1BNHdtYmdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1ODA3Mjc3CWZpbGU6U1ZOIOWIhuaUr+WQiOW5tuW3peWFt18yLjAuOF94NjQtc2V0dXAuZXhlCnZmYVp3RWQxend4Q2I2ZmN2Q2RodDRBYVNFL3RlUzBCTkZyb1hPdEYyTExOMDczWnhJTWZkSnlMeDk4UVFFM2xvNGtpdzJyd1BQR0swTE15UW9UZ0NBPT0K",
-      "url": "https://github.com/leaf-zly/svn-merge-tool-releases/releases/download/v2.0.8/svn-merge-tool_2.0.8_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRNHRhMHlzb1Nhbm1IblYxbzdjK3MwU1YzUEJta2tocXVON2ZheFNFMjEwd01jaEpxQkZPYzIwa0hSVTBlZmpicHFtN2xJcFVEb1Q2VnhoOVhDbGc3d2c2VHVrckR5ZVFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1ODI3OTY4CWZpbGU6U1ZOIOWIhuaUr+WQiOW5tuW3peWFt18yLjAuOV94NjQtc2V0dXAuZXhlCk1DSGl3V2hnWFEvZ2wxU1ZsdWFKUUVoZUl0RE5LMjVuT1ZPYnl6bVJacFdUL2J3RWx4cExmUnZxdXYyandUMnIvb00zRnZzR0VRNHJVc0pzRVB3eUNBPT0K",
+      "url": "https://github.com/leaf-zly/svn-merge-tool-releases/releases/download/v2.0.9/svn-merge-tool_2.0.9_x64-setup.exe"
     }
   }
 }
