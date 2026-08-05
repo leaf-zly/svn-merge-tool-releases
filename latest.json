@@ -5,11 +5,11 @@
   "platforms": {
     "windows-x86_64": {
       "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRNHRhMHlzb1Nhbm1IblYxbzdjK3MwU1YzUEJta2tocXVON2ZheFNFMjEwd01jaEpxQkZPYzIwa0hSVTBlZmpicHFtN2xJcFVEb1Q2VnhoOVhDbGc3d2c2VHVrckR5ZVFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1ODI3OTY4CWZpbGU6U1ZOIOWIhuaUr+WQiOW5tuW3peWFt18yLjAuOV94NjQtc2V0dXAuZXhlCk1DSGl3V2hnWFEvZ2wxU1ZsdWFKUUVoZUl0RE5LMjVuT1ZPYnl6bVJacFdUL2J3RWx4cExmUnZxdXYyandUMnIvb00zRnZzR0VRNHJVc0pzRVB3eUNBPT0K",
-      "url": "https://github.com/leaf-zly/svn-merge-tool-releases/releases/download/v2.0.9/svn-merge-tool_2.0.9_x64-setup.exe"
+      "url": "https://raw.githubusercontent.com/leaf-zly/svn-merge-tool-releases/main/downloads/v2.0.9/svn-merge-tool_2.0.9_x64-setup.exe"
     },
     "windows-x86_64-nsis": {
       "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRNHRhMHlzb1Nhbm1IblYxbzdjK3MwU1YzUEJta2tocXVON2ZheFNFMjEwd01jaEpxQkZPYzIwa0hSVTBlZmpicHFtN2xJcFVEb1Q2VnhoOVhDbGc3d2c2VHVrckR5ZVFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1ODI3OTY4CWZpbGU6U1ZOIOWIhuaUr+WQiOW5tuW3peWFt18yLjAuOV94NjQtc2V0dXAuZXhlCk1DSGl3V2hnWFEvZ2wxU1ZsdWFKUUVoZUl0RE5LMjVuT1ZPYnl6bVJacFdUL2J3RWx4cExmUnZxdXYyandUMnIvb00zRnZzR0VRNHJVc0pzRVB3eUNBPT0K",
-      "url": "https://github.com/leaf-zly/svn-merge-tool-releases/releases/download/v2.0.9/svn-merge-tool_2.0.9_x64-setup.exe"
+      "url": "https://raw.githubusercontent.com/leaf-zly/svn-merge-tool-releases/main/downloads/v2.0.9/svn-merge-tool_2.0.9_x64-setup.exe"
     }
   }
 }
