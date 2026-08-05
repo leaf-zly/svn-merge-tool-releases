@@ -1,15 +1,15 @@
 {
-  "version": "2.0.9",
-  "notes": "## SVN 分支合并工具 v2.0.9\r\n\r\n### 日志与面板拖拽\r\n\r\n- 日志区域新增一键放大和恢复，放大后可使用 `Esc` 快速返回原布局。\r\n- 分隔条支持拖动、单击收起或恢复、双击恢复默认高度，以及方向键、Home、End、Enter 键盘操作。\r\n- 日志可一直收起到窗口底部，拖拽按钮始终可见，并支持从底部直接拖回。\r\n- 自动记住用户上一次拖拽位置；窗口缩小时只做临时约束，窗口恢复后回到原位置。\r\n- 空日志默认收起，产生新日志时自动展开；清空日志后重新收起。\r\n- 修复极限拖拽漏算面板间距导致内容溢出窗口的问题。\r\n\r\n### 主界面布局与操作效率\r\n\r\n- 源分支和目标分支的标题、输入框基线统一，左右布局更加整齐。\r\n- 窗口宽度不超过 500px 时，路径配置自动切换为上下两行布局。\r\n- 提交表格合并“作者 / 时间”信息，压缩列宽，并将状态列固定在右侧。\r\n- 合并预览、开始合并和进度反馈移动到提交表格底部，滚动列表时主要操作始终可见。\r\n- 提交顺序拖拽按钮支持键盘上下移动，并完善焦点和禁用状态反馈。\r\n\r\n### 引导与可访问性\r\n\r\n- 待合并列表空状态新增“配置源分支 → 添加目标分支 → 点击扫描”三步引导。\r\n- 目录选择、源目标交换、删除、查看日志等图标按钮补充中文悬停说明和无障碍标签。\r\n- 图标按钮统一有效点击区域，减少误点和“按钮无响应”的误判。\r\n\r\n### 错误提示与质量保障\r\n\r\n- JavaScript、网络、权限、路径、命令缺失和 SVN 等底层错误统一转换为可理解的中文提示。\r\n- 原始英文技术错误保留在执行日志中，界面弹窗不再直接显示难以理解的异常文本。\r\n- 新增面板边界和错误中文化单元测试。\r\n- 通过 TypeScript 类型检查、37 项前端测试、生产前端构建、Rust Clippy 和 Rust 测试。",
-  "pub_date": "2026-08-04T07:19:31.252Z",
+  "version": "2.0.10",
+  "notes": "## SVN 分支合并工具 v2.0.10\r\n\r\n### 更新下载稳定性\r\n\r\n- 安装包新增 GitHub Raw 直链镜像，避开部分网络无法连接 `release-assets.githubusercontent.com` 导致的下载失败。\r\n- 应用内更新的“浏览器下载”直接打开镜像安装包，并新增“复制链接”作为系统浏览器无法启动时的备用方式。\r\n- 后续正式版本会自动同步安装包和签名到下载镜像，并同时更新 Raw 与 Release 两份更新索引。\r\n- 顶部检查更新入口改为纯图标，继续保留检查状态、悬浮说明和新版本提示点。\r\n\r\n### 全新悬浮日志中心\r\n\r\n- 主界面日志改为默认位于右下角的悬浮按钮，不再长期占用工作区空间。\r\n- 悬浮按钮支持自由拖动和位置持久化；窗口尺寸变化后仍保持用户选择的相对位置，并自动限制在可见范围内。\r\n- 新增未读数量和错误状态提示，点击后打开独立日志窗口。\r\n- 日志支持按信息、成功、警告、错误筛选，并可按时间或内容搜索。\r\n- 支持自动跟随、打开日志目录、复制当前结果、导出全部日志和清空日志，所有操作统一为带悬浮说明的图标按钮。\r\n- 工具图标移动到标题栏右侧，放大与关闭按钮保持在最右侧；日志内容区域获得更多纵向空间。\r\n\r\n### 待合并区域与界面布局\r\n\r\n- 待合并区域接管原日志面板空间，列表可显示更多提交内容。\r\n- 配置区与待合并区之间支持拖动调整、单击收起、双击恢复和键盘操作。\r\n- 待合并区域支持一键放大或恢复，放大后可使用 `Esc` 返回上一次拖拽位置。\r\n- 窗口大小变化时自动约束布局，恢复窗口后保留用户上一次设置。\r\n- 收紧路径配置、列表标题和页面面板间距，在不降低可读性的前提下提升信息密度。\r\n\r\n### 质量保障\r\n\r\n- 新增悬浮位置换算、窗口边界和更新下载地址测试。\r\n- 通过 TypeScript 类型检查、42 项前端测试、生产前端构建、Rust Clippy 与 Rust 测试。",
+  "pub_date": "2026-08-05T01:21:16.941Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRNHRhMHlzb1Nhbm1IblYxbzdjK3MwU1YzUEJta2tocXVON2ZheFNFMjEwd01jaEpxQkZPYzIwa0hSVTBlZmpicHFtN2xJcFVEb1Q2VnhoOVhDbGc3d2c2VHVrckR5ZVFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1ODI3OTY4CWZpbGU6U1ZOIOWIhuaUr+WQiOW5tuW3peWFt18yLjAuOV94NjQtc2V0dXAuZXhlCk1DSGl3V2hnWFEvZ2wxU1ZsdWFKUUVoZUl0RE5LMjVuT1ZPYnl6bVJacFdUL2J3RWx4cExmUnZxdXYyandUMnIvb00zRnZzR0VRNHJVc0pzRVB3eUNBPT0K",
-      "url": "https://raw.githubusercontent.com/leaf-zly/svn-merge-tool-releases/main/downloads/v2.0.9/svn-merge-tool_2.0.9_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRNHRhMHlzb1Nhbm92S1ZCNFJ5RUNlV3RwVWtWbjVlZ3ljWDZ4Y29FbjMybnhieTVQNVV3Z3g4NVZSMU0vbHcxMm81a2pFbm9lVXBHUmt6ZTBXOEFnUEVEU1BteFkwdlFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1ODkyODczCWZpbGU6U1ZOIOWIhuaUr+WQiOW5tuW3peWFt18yLjAuMTBfeDY0LXNldHVwLmV4ZQozQ244L2p2MjgydjczMytTRGtFYWZHYmdzOEJvZklMdTFhRk1yN2JPYWFHamVrSjNoRmlMT3dDaUZKSUhOdHdyb0VNZy9QZHB0L0ZNZnBQUkUxemREQT09Cg==",
+      "url": "https://raw.githubusercontent.com/leaf-zly/svn-merge-tool-releases/main/downloads/v2.0.10/svn-merge-tool_2.0.10_x64-setup.exe"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRNHRhMHlzb1Nhbm1IblYxbzdjK3MwU1YzUEJta2tocXVON2ZheFNFMjEwd01jaEpxQkZPYzIwa0hSVTBlZmpicHFtN2xJcFVEb1Q2VnhoOVhDbGc3d2c2VHVrckR5ZVFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1ODI3OTY4CWZpbGU6U1ZOIOWIhuaUr+WQiOW5tuW3peWFt18yLjAuOV94NjQtc2V0dXAuZXhlCk1DSGl3V2hnWFEvZ2wxU1ZsdWFKUUVoZUl0RE5LMjVuT1ZPYnl6bVJacFdUL2J3RWx4cExmUnZxdXYyandUMnIvb00zRnZzR0VRNHJVc0pzRVB3eUNBPT0K",
-      "url": "https://raw.githubusercontent.com/leaf-zly/svn-merge-tool-releases/main/downloads/v2.0.9/svn-merge-tool_2.0.9_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRNHRhMHlzb1Nhbm92S1ZCNFJ5RUNlV3RwVWtWbjVlZ3ljWDZ4Y29FbjMybnhieTVQNVV3Z3g4NVZSMU0vbHcxMm81a2pFbm9lVXBHUmt6ZTBXOEFnUEVEU1BteFkwdlFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1ODkyODczCWZpbGU6U1ZOIOWIhuaUr+WQiOW5tuW3peWFt18yLjAuMTBfeDY0LXNldHVwLmV4ZQozQ244L2p2MjgydjczMytTRGtFYWZHYmdzOEJvZklMdTFhRk1yN2JPYWFHamVrSjNoRmlMT3dDaUZKSUhOdHdyb0VNZy9QZHB0L0ZNZnBQUkUxemREQT09Cg==",
+      "url": "https://raw.githubusercontent.com/leaf-zly/svn-merge-tool-releases/main/downloads/v2.0.10/svn-merge-tool_2.0.10_x64-setup.exe"
     }
   }
 }
