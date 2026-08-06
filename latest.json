@@ -1,15 +1,15 @@
 {
-  "version": "2.0.11",
-  "notes": "## SVN 分支合并工具 v2.0.11\r\n\r\n### 新增环境诊断中心\r\n\r\n- 新增运行环境一键诊断，集中检查 SVN CLI、Codex CLI、临时目录和日志目录是否可用。\r\n- 自动检查源分支、目标分支配置，帮助在扫描或合并前快速定位路径与工具链问题。\r\n- 支持重新检测、复制诊断报告和直接打开日志目录，便于排查问题或提供完整反馈。\r\n\r\n### 待合并顺序拖拽优化\r\n\r\n- 拖拽把手升级为更清晰的六点式样式，并扩大可操作区域。\r\n- 拖到列表顶部或底部时自动滚动，可将提交移动到真正的第一条或最后一条。\r\n- 支持方向键微调以及 `Home`、`End` 快速移动到首尾，兼顾鼠标和键盘操作。\r\n- 插入指示线会根据拖动方向显示在目标行上方或下方，使最终落点更加明确。\r\n\r\n### 日志窗口布局修复\r\n\r\n- 日志工具按钮、全屏按钮与关闭按钮统一垂直居中，修复标题栏按钮未水平对齐的问题。\r\n- 第二行工具组调整到标题栏右侧并紧邻窗口控制按钮，减少空白并提升操作连贯性。\r\n\r\n### 质量保障\r\n\r\n- 通过 TypeScript 类型检查、50 项前端测试和生产前端构建。\r\n- 通过 Rust 格式检查、Clippy 静态检查及 Rust 测试。",
-  "pub_date": "2026-08-05T02:17:45.426Z",
+  "version": "2.0.12",
+  "notes": "## SVN 分支合并工具 v2.0.12\r\n\r\n### Codex CLI 智能合并稳定性\r\n\r\n- AI 冲突解决继续只通过本机 Codex CLI 执行，不调用网络接口 API。\r\n- Windows 下优先识别真正的 `codex.exe`，并兼容 npm/nvm 安装产生的 `.cmd`、`.bat` 和 `.ps1` 启动包装器。\r\n- 修复误选无扩展名 CLI shim 导致“不是有效的 Win32 应用程序（os error 193）”的问题。\r\n- 环境诊断中心现在可以更准确地反映本机 Codex CLI 是否可启动。\r\n\r\n### 合并执行优化\r\n\r\n- 普通无冲突合并不再自动执行 ESLint，避免改写与当前 revision 无关的代码。\r\n- 只有进入冲突解决流程后，才会对冲突处理结果执行 ESLint 修复。\r\n- 保持每条 revision 独立 merge + commit 的既有流程不变。\r\n\r\n### 弹窗与滚动体验\r\n\r\n- 合并预览窗口扩大到更适合查看差异的尺寸，内容固定在窗口内部滚动。\r\n- 所有 Element Plus 弹窗和自定义冲突解决窗口统一锁定最外层页面滚动，避免出现双重滚动条。\r\n- 弹窗最大高度和内部滚动区域统一约束，加载阶段不再撑开主窗口。\r\n\r\n### 日志和加载状态\r\n\r\n- 修复日志窗口操作组遮挡或挤压全屏按钮的问题，全屏、关闭和工具按钮保持同一水平中心线。\r\n- 待合并提交扫描初始化时暂时隐藏悬浮日志按钮，让 loading 状态覆盖主工作区视觉焦点。\r\n\r\n### 质量保障\r\n\r\n- 通过 TypeScript 类型检查、50 项前端测试和生产前端构建。\r\n- 通过 Windows GitHub Actions 的 Rust 格式检查、Clippy、Rust 测试、TypeScript 和前端测试。",
+  "pub_date": "2026-08-06T01:28:18.684Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRNHRhMHlzb1NhbmdNZEJ4ZjE3d1l2aGhqcHV5WEtOUjRwZXVaQ050M2o5QloreHpXbTRqTS9TWjdQYnBKRDNKVGJRRkw4MmpQTGpLanlMUm1VVEdGeStpcDJMVERtOWdvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1ODk2MjYyCWZpbGU6U1ZOIOWIhuaUr+WQiOW5tuW3peWFt18yLjAuMTFfeDY0LXNldHVwLmV4ZQpKVXZ3SlYwUnlFTllZaHowVFhyOHBIZmZ0RFV4UzB0UVNmZG9VVVptWjlkczJxUzV1eDFLNkJPV2lnbWxWdWsrQ1diZ0Q4d3JLUlhuVlY5NVFkV3VDdz09Cg==",
-      "url": "https://raw.githubusercontent.com/leaf-zly/svn-merge-tool-releases/main/downloads/v2.0.11/svn-merge-tool_2.0.11_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRNHRhMHlzb1NhbnBWaGhmenY3VEF0aW5aM0FPTThlZFdYRWhsTG5tbXZzREIxRkFvejExK0hxRE1iZlhSUStqd1R0WHJjTVdxZ1FyQlFXQWRaN094dW5MNGxLTmJwVUEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1OTc5Njk1CWZpbGU6U1ZOIOWIhuaUr+WQiOW5tuW3peWFt18yLjAuMTJfeDY0LXNldHVwLmV4ZQphNmZmYWlyY3lQWDNybDVNV3dkMHpnUGVicDVvclpvS2Rab2VZY0x6SWc3TjZqZmFHbWZyb083R1Q1T2grSllhVmw3TjhPNTQ5OHlNZU5sL0lUd01Cdz09Cg==",
+      "url": "https://raw.githubusercontent.com/leaf-zly/svn-merge-tool-releases/main/downloads/v2.0.12/svn-merge-tool_2.0.12_x64-setup.exe"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRNHRhMHlzb1NhbmdNZEJ4ZjE3d1l2aGhqcHV5WEtOUjRwZXVaQ050M2o5QloreHpXbTRqTS9TWjdQYnBKRDNKVGJRRkw4MmpQTGpLanlMUm1VVEdGeStpcDJMVERtOWdvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1ODk2MjYyCWZpbGU6U1ZOIOWIhuaUr+WQiOW5tuW3peWFt18yLjAuMTFfeDY0LXNldHVwLmV4ZQpKVXZ3SlYwUnlFTllZaHowVFhyOHBIZmZ0RFV4UzB0UVNmZG9VVVptWjlkczJxUzV1eDFLNkJPV2lnbWxWdWsrQ1diZ0Q4d3JLUlhuVlY5NVFkV3VDdz09Cg==",
-      "url": "https://raw.githubusercontent.com/leaf-zly/svn-merge-tool-releases/main/downloads/v2.0.11/svn-merge-tool_2.0.11_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRNHRhMHlzb1NhbnBWaGhmenY3VEF0aW5aM0FPTThlZFdYRWhsTG5tbXZzREIxRkFvejExK0hxRE1iZlhSUStqd1R0WHJjTVdxZ1FyQlFXQWRaN094dW5MNGxLTmJwVUEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1OTc5Njk1CWZpbGU6U1ZOIOWIhuaUr+WQiOW5tuW3peWFt18yLjAuMTJfeDY0LXNldHVwLmV4ZQphNmZmYWlyY3lQWDNybDVNV3dkMHpnUGVicDVvclpvS2Rab2VZY0x6SWc3TjZqZmFHbWZyb083R1Q1T2grSllhVmw3TjhPNTQ5OHlNZU5sL0lUd01Cdz09Cg==",
+      "url": "https://raw.githubusercontent.com/leaf-zly/svn-merge-tool-releases/main/downloads/v2.0.12/svn-merge-tool_2.0.12_x64-setup.exe"
     }
   }
 }
