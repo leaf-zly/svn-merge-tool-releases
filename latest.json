@@ -1,15 +1,15 @@
 {
-  "version": "2.0.14",
-  "notes": "## SVN 分支合并工具 v2.0.14\r\n\r\n### 合并终止与故障诊断\r\n\r\n- 点击“中止合并”后立即显示终止状态，停止当前 SVN 进程树并执行限时安全回滚，不再长时间没有反馈。\r\n- SVN update、merge 和网络重试阶段都会及时响应终止请求；已完成的 revision 不受影响。\r\n- SVN 超时或执行失败时展示具体命令、工作目录、退出代码及有界命令输出，便于直接定位网络、认证、锁定或冲突问题。\r\n- 错误诊断会自动隐藏密码和口令参数，避免敏感信息出现在界面和日志中。\r\n\r\n### Codex CLI 智能冲突合并\r\n\r\n- Windows 下改为通过系统 PowerShell 调用 `codex`，行为与用户在 PowerShell 中直接输入 `codex` 一致。\r\n- 复用当前 Windows 用户的 PowerShell Profile、PATH、`CODEX_HOME` 和现有认证配置，不再要求应用内单独执行 `codex login`。\r\n- 仍支持通过 `CODEX_BINARY` 显式指定 Codex CLI，普通 SVN 合并不依赖 AI 功能。\r\n\r\n### 启动更新提示与浏览器下载\r\n\r\n- 应用每次启动后自动静默检查更新，不主动弹出更新窗口；发现新版本时只在右上角更新按钮显示红点标识。\r\n- 用户点击更新按钮后才展示版本详情、发布说明和安装操作。\r\n- “浏览器下载”改由 Rust 后端打开受信任的 GitHub 下载地址；原生打开失败时在 Windows 上使用 Explorer 兜底。\r\n- 浏览器打开失败会展示具体原因，并保留复制下载链接的备用方式。\r\n\r\n### 发布效率\r\n\r\n- GitHub Actions 将质量检查和 Release 预编译并行执行。\r\n- 正式标签发布会复用同一提交已经验证的预编译 EXE，跳过重复 Rust 编译；预编译产物失效时自动回退到完整云端构建。\r\n- 正式安装包仍只在 GitHub 的干净 Windows 环境中签名和打包，不在开发机生成。\r\n\r\n### 质量保障\r\n\r\n- 已通过 TypeScript 类型检查、53 项前端测试、生产前端构建、Rust 格式检查和界面交互验收。\r\n- GitHub Actions 将继续执行 Rust Clippy、Rust 测试、TypeScript 和前端测试，全部成功后才允许创建正式发布标签。",
-  "pub_date": "2026-08-06T09:44:18.814Z",
+  "version": "2.0.15",
+  "notes": "## SVN 分支合并工具 v2.0.15\r\n\r\n### 冲突检测与三栏对比\r\n\r\n- 修复 SVN 发现代码冲突后停在命令行交互询问，最终等待 120 秒并错误显示为“命令执行超时”的问题。\r\n- 合并时会自动推迟 SVN CLI 的冲突处理并立即结束命令，再由应用枚举全部冲突文件。\r\n- 冲突文件会恢复显示在冲突解决窗口中，并进入现有 Mine / Result / Theirs 三栏对比流程。\r\n- 同一 revision 中已经成功应用的非冲突文件会继续保留，用户完成所有冲突文件后再按原流程提交。\r\n\r\n### 兼容性与安全\r\n\r\n- 使用 SVN 标准参数 `--non-interactive --accept postpone`，已确认兼容当前 SVN 1.14.1 环境。\r\n- 不再依赖桌面应用无法提供的终端输入，避免冲突合并被误判为网络、认证或工作副本锁定超时。\r\n- 增加合并参数回归测试，防止后续修改重新引入交互等待。\r\n\r\n### 质量保障\r\n\r\n- 已通过 Rust 格式检查和本机 SVN 参数兼容性验证。\r\n- 正式发布继续由 GitHub Actions 执行 Rust Clippy、Rust 测试、TypeScript 和前端测试，通过后才生成签名安装包。",
+  "pub_date": "2026-08-07T08:42:51.051Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRNHRhMHlzb1NhbmpPNW1kR1dUZlo3b3BDdEdWUmhPbTlKRWFVbTVUWlUxVW1uUUVuaVFDdlQ1dHU0STd2dS90SVROcURTSUlidEFZeFZSOHVkRGtRWHlOTEhLMEtTSkFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MDA5NDU1CWZpbGU6U1ZOIOWIhuaUr+WQiOW5tuW3peWFt18yLjAuMTRfeDY0LXNldHVwLmV4ZQpvMmdEVVNjbm5jRTh4VlFZSTdiN1BLS1E5clZOVWx0YUYwOXozdytJdkZZL3djOFk2cFJLK24vdUNaRld4MGprZXlleG9OMis1QUJFbEhzNHVuWTZCUT09Cg==",
-      "url": "https://raw.githubusercontent.com/leaf-zly/svn-merge-tool-releases/main/downloads/v2.0.14/svn-merge-tool_2.0.14_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRNHRhMHlzb1NhbmhkVWlxTktvNDNlWngxMnBtTWpCcmZGbWdRNXgzZzJwb1gzTHFhVm5RRlhFYnl6ZUU1QVVaNFZFRHIvUGtGSUFydU8wRmN1c0RFb1ZKTEZDWWoyT1FNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MDkyMTY3CWZpbGU6U1ZOIOWIhuaUr+WQiOW5tuW3peWFt18yLjAuMTVfeDY0LXNldHVwLmV4ZQp3SlRXSDdJWnFMSWhmWUZTRkZJbXk0UGkxYWxqY3BzcE4xeWswcXRabS9mNUp0ZlhFQmJQcm9nL05OQXQra1lkUlFCN2JROVJ4RFNSclRtK1hkSTJBZz09Cg==",
+      "url": "https://raw.githubusercontent.com/leaf-zly/svn-merge-tool-releases/main/downloads/v2.0.15/svn-merge-tool_2.0.15_x64-setup.exe"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRNHRhMHlzb1NhbmpPNW1kR1dUZlo3b3BDdEdWUmhPbTlKRWFVbTVUWlUxVW1uUUVuaVFDdlQ1dHU0STd2dS90SVROcURTSUlidEFZeFZSOHVkRGtRWHlOTEhLMEtTSkFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MDA5NDU1CWZpbGU6U1ZOIOWIhuaUr+WQiOW5tuW3peWFt18yLjAuMTRfeDY0LXNldHVwLmV4ZQpvMmdEVVNjbm5jRTh4VlFZSTdiN1BLS1E5clZOVWx0YUYwOXozdytJdkZZL3djOFk2cFJLK24vdUNaRld4MGprZXlleG9OMis1QUJFbEhzNHVuWTZCUT09Cg==",
-      "url": "https://raw.githubusercontent.com/leaf-zly/svn-merge-tool-releases/main/downloads/v2.0.14/svn-merge-tool_2.0.14_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRNHRhMHlzb1NhbmhkVWlxTktvNDNlWngxMnBtTWpCcmZGbWdRNXgzZzJwb1gzTHFhVm5RRlhFYnl6ZUU1QVVaNFZFRHIvUGtGSUFydU8wRmN1c0RFb1ZKTEZDWWoyT1FNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MDkyMTY3CWZpbGU6U1ZOIOWIhuaUr+WQiOW5tuW3peWFt18yLjAuMTVfeDY0LXNldHVwLmV4ZQp3SlRXSDdJWnFMSWhmWUZTRkZJbXk0UGkxYWxqY3BzcE4xeWswcXRabS9mNUp0ZlhFQmJQcm9nL05OQXQra1lkUlFCN2JROVJ4RFNSclRtK1hkSTJBZz09Cg==",
+      "url": "https://raw.githubusercontent.com/leaf-zly/svn-merge-tool-releases/main/downloads/v2.0.15/svn-merge-tool_2.0.15_x64-setup.exe"
     }
   }
 }
