@@ -1,15 +1,15 @@
 {
-  "version": "2.0.15",
-  "notes": "## SVN 分支合并工具 v2.0.15\r\n\r\n### 冲突检测与三栏对比\r\n\r\n- 修复 SVN 发现代码冲突后停在命令行交互询问，最终等待 120 秒并错误显示为“命令执行超时”的问题。\r\n- 合并时会自动推迟 SVN CLI 的冲突处理并立即结束命令，再由应用枚举全部冲突文件。\r\n- 冲突文件会恢复显示在冲突解决窗口中，并进入现有 Mine / Result / Theirs 三栏对比流程。\r\n- 同一 revision 中已经成功应用的非冲突文件会继续保留，用户完成所有冲突文件后再按原流程提交。\r\n\r\n### 兼容性与安全\r\n\r\n- 使用 SVN 标准参数 `--non-interactive --accept postpone`，已确认兼容当前 SVN 1.14.1 环境。\r\n- 不再依赖桌面应用无法提供的终端输入，避免冲突合并被误判为网络、认证或工作副本锁定超时。\r\n- 增加合并参数回归测试，防止后续修改重新引入交互等待。\r\n\r\n### 质量保障\r\n\r\n- 已通过 Rust 格式检查和本机 SVN 参数兼容性验证。\r\n- 正式发布继续由 GitHub Actions 执行 Rust Clippy、Rust 测试、TypeScript 和前端测试，通过后才生成签名安装包。",
-  "pub_date": "2026-08-07T08:42:51.051Z",
+  "version": "2.0.16",
+  "notes": "## SVN 分支合并工具 v2.0.16\r\n\r\n### 冲突解决界面\r\n\r\n- 修复已检测到冲突并显示“等待用户解决冲突”，但三栏冲突解决窗口被执行日志弹窗遮挡、看起来没有任何响应的问题。\r\n- 冲突发生时会自动收起执行日志窗口，并将 Mine / Result / Theirs 三栏解决界面置于最上层。\r\n- 收到冲突事件后立即展示解决窗口和文件加载状态，无需等待所有冲突文件读取完成才显示界面。\r\n- 加载完成后保留冲突文件列表、逐块接受、手动编辑和 AI 智能合并等原有处理流程。\r\n\r\n### 异常反馈与交互\r\n\r\n- 增加冲突文件读取失败提示，不再用空内容打开合并编辑器，避免用户误以为文件没有冲突内容。\r\n- 冲突解决窗口打开时锁定外层页面滚动，滚动只发生在冲突文件列表和三栏编辑区域中。\r\n- 补充对话框语义、加载状态和错误状态，提升界面反馈的清晰度。\r\n\r\n### 质量保障\r\n\r\n- 新增冲突窗口即时显示和文件读取失败回归测试。\r\n- 本地已通过 TypeScript 类型检查、55 项前端测试和生产前端构建。\r\n- 正式安装包继续由 GitHub Actions 在干净 Windows 环境中检查、签名并发布，本地不生成正式安装包。",
+  "pub_date": "2026-08-07T09:26:56.98Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRNHRhMHlzb1NhbmhkVWlxTktvNDNlWngxMnBtTWpCcmZGbWdRNXgzZzJwb1gzTHFhVm5RRlhFYnl6ZUU1QVVaNFZFRHIvUGtGSUFydU8wRmN1c0RFb1ZKTEZDWWoyT1FNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MDkyMTY3CWZpbGU6U1ZOIOWIhuaUr+WQiOW5tuW3peWFt18yLjAuMTVfeDY0LXNldHVwLmV4ZQp3SlRXSDdJWnFMSWhmWUZTRkZJbXk0UGkxYWxqY3BzcE4xeWswcXRabS9mNUp0ZlhFQmJQcm9nL05OQXQra1lkUlFCN2JROVJ4RFNSclRtK1hkSTJBZz09Cg==",
-      "url": "https://raw.githubusercontent.com/leaf-zly/svn-merge-tool-releases/main/downloads/v2.0.15/svn-merge-tool_2.0.15_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRNHRhMHlzb1NhbnZ3VUpUOFg2WDNWaE5mUEpxZEVzNFpwdXU1bEk5SXFYMHR4ZFRUakVCUmc1aXo4T3lGcFZwdFZDSlI4RlpySFRJUkRWUUk0T0d2V1lGaUtESCtldEFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MDk0ODEzCWZpbGU6U1ZOIOWIhuaUr+WQiOW5tuW3peWFt18yLjAuMTZfeDY0LXNldHVwLmV4ZQpVY2VMOFBjTGtSb2xkTkhrQ21EaTBwcExiZUJndzdtN2NKQ29La2xvNmxybWRqeWc0UU5rRXFjSG5pY1d0SVRMYnFJeUJCRk55ZlZGOTcxZnRuUG1BUT09Cg==",
+      "url": "https://raw.githubusercontent.com/leaf-zly/svn-merge-tool-releases/main/downloads/v2.0.16/svn-merge-tool_2.0.16_x64-setup.exe"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRNHRhMHlzb1NhbmhkVWlxTktvNDNlWngxMnBtTWpCcmZGbWdRNXgzZzJwb1gzTHFhVm5RRlhFYnl6ZUU1QVVaNFZFRHIvUGtGSUFydU8wRmN1c0RFb1ZKTEZDWWoyT1FNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MDkyMTY3CWZpbGU6U1ZOIOWIhuaUr+WQiOW5tuW3peWFt18yLjAuMTVfeDY0LXNldHVwLmV4ZQp3SlRXSDdJWnFMSWhmWUZTRkZJbXk0UGkxYWxqY3BzcE4xeWswcXRabS9mNUp0ZlhFQmJQcm9nL05OQXQra1lkUlFCN2JROVJ4RFNSclRtK1hkSTJBZz09Cg==",
-      "url": "https://raw.githubusercontent.com/leaf-zly/svn-merge-tool-releases/main/downloads/v2.0.15/svn-merge-tool_2.0.15_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRNHRhMHlzb1NhbnZ3VUpUOFg2WDNWaE5mUEpxZEVzNFpwdXU1bEk5SXFYMHR4ZFRUakVCUmc1aXo4T3lGcFZwdFZDSlI4RlpySFRJUkRWUUk0T0d2V1lGaUtESCtldEFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MDk0ODEzCWZpbGU6U1ZOIOWIhuaUr+WQiOW5tuW3peWFt18yLjAuMTZfeDY0LXNldHVwLmV4ZQpVY2VMOFBjTGtSb2xkTkhrQ21EaTBwcExiZUJndzdtN2NKQ29La2xvNmxybWRqeWc0UU5rRXFjSG5pY1d0SVRMYnFJeUJCRk55ZlZGOTcxZnRuUG1BUT09Cg==",
+      "url": "https://raw.githubusercontent.com/leaf-zly/svn-merge-tool-releases/main/downloads/v2.0.16/svn-merge-tool_2.0.16_x64-setup.exe"
     }
   }
 }
